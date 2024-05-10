@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div>
+
+        <p>Input 1: <input type="text" id="input1" > </p> 
+        <p>Input 2: <input type="text" id="input2" > </p>  
+        <p>
+            Operator:
+            <button onclick="add()">+</button>
+            <button onclick="subtract()">-</button>
+            <button onclick="multiply()">*</button>
+            <button onclick="divide()">/</button>
+        </p>
+        <p>Result:</p>
+        <p id="res"></p>
+        <script>
+            
+            function add() {
+                var x = parseFloat(document.getElementById("input1").value);
+                var y = parseFloat(document.getElementById("input2").value);
+                var z = x + y;
+                document.getElementById("res").innerHTML = x + " + " + y + " = " + z;
+            }
+
+            
+            function subtract() {
+                var x = parseFloat(document.getElementById("input1").value);
+                var y = parseFloat(document.getElementById("input2").value);
+                var z = x - y;
+                document.getElementById("res").innerHTML = x + " - " + y + " = " + z;
+            }
+
+           
+            function multiply() {
+                var x = parseFloat(document.getElementById("input1").value);
+                var y = parseFloat(document.getElementById("input2").value);
+                var z = x * y;
+                document.getElementById("res").innerHTML = x + " * " + y + " = " + z;
+            }
+
+            function divide() {
+                var x = parseFloat(document.getElementById("input1").value);
+                var y = parseFloat(document.getElementById("input2").value);
+                if (y !== 0) {
+                    var z = x / y;
+                    document.getElementById("res").innerHTML = x + " / " + y + " = " + z;
+                } else {
+                    document.getElementById("res").innerHTML = "Cannot divide by zero!";
+                }
+            }
+            
+            
+        </script>
+
+     
+
+
+
+
+
+    </div>
+
+</body>
+</html>
